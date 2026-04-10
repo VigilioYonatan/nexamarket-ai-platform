@@ -1,0 +1,36 @@
+{
+  "name": "nexamarket-platform",
+  "version": "0.1.0-beta",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev:api": "npm run dev --workspace=@nexa/api",
+    "dev:web": "npm run dev --workspace=@nexa/web",
+    "build": "npm run build --workspace=@nexa/domain && npm run build --workspace=@nexa/api && npm run build --workspace=@nexa/web",
+    "typecheck": "npm run build --workspace=@nexa/domain && npm run typecheck --workspace=@nexa/api && npm run typecheck --workspace=@nexa/web",
+    "lint": "npx @biomejs/biome lint",
+    "format:check": "npx @biomejs/biome format",
+    "test:domain": "node --experimental-strip-types --test packages/domain/test/*.test.ts",
+    "test:unit": "npm run test:domain && npm run test --workspace=@nexa/api",
+    "test:integration": "npm run test:integration --workspace=@nexa/api",
+    "test:e2e": "playwright test",
+    "test:coverage": "npm run test:coverage --workspace=@nexa/api",
+    "audit:source": "node -e \"const cp = require('node:child_process'); const cmd = process.platform === 'win32' ? 'python scripts/audit_source.py' : 'python3 scripts/audit_source.py'; cp.execSync(cmd, { stdio: 'inherit' });\"",
+    "test:bdd": "node --experimental-strip-types node_modules/@cucumber/cucumber/bin/cucumber.js --import tests/bdd/steps.ts tests/bdd/features/**/*.feature",
+    "test:ai": "node -e \"const cp = require('node:child_process'); const cmd = process.platform === 'win32' ? 'python -m pytest -q apps/ai/tests' : 'python3 -m pytest -q apps/ai/tests'; cp.execSync(cmd, { stdio: 'inherit' });\"",
+    "test:all": "npm run test:domain && npm run test:bdd && npm run test:unit && npm run test:integration && npm run test:e2e && npm run test:ai"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "11.3.0",
+    "@playwright/test": "1.56.0",
+    "@types/node": "22.19.0",
+    "typescript": "5.9.3"
+  }
+}
