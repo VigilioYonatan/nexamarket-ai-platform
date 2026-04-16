@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "product": "NexaMarket AI",
+  "policy": "fail_closed_for_p0",
+  "required_checks": [
+    "lint", "typecheck", "unit", "postgres_integration", "bdd", "e2e_api",
+    "e2e_browser", "openapi_diff", "authz_negative", "inventory_concurrency",
+    "mercado_pago_webhook_idempotency", "ledger_reconciliation", "secret_scan",
+    "dependency_scan", "container_scan", "sbom", "signature_verification",
+    "migration_preflight", "staging_smoke", "restore_drill", "rollback_readiness"
+  ],
+  "evidence_states": ["PASS", "FAIL", "BLOCKED", "NOT_RUN"],
+  "block_release_if_not_passed": [
+    "authz_negative", "inventory_concurrency", "mercado_pago_webhook_idempotency",
+    "ledger_reconciliation", "signature_verification", "restore_drill"
+  ],
+  "note": "Definitions only. Actual CI required-check enforcement must be configured in the consumer repository."
+}
