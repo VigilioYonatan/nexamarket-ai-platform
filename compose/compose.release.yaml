@@ -1,0 +1,11 @@
+# Runtime image override; use -f compose.yaml -f compose.release.yaml up -d --no-build
+# Only approved digest values (registry.internal/org/image@sha256:...) are valid.
+services:
+  api:
+    image: ${NEXA_API_IMAGE:?Set signed approved API OCI digest}
+  worker:
+    image: ${NEXA_API_IMAGE:?Set signed approved API OCI digest}
+  migration:
+    image: ${NEXA_API_IMAGE:?Set signed approved API OCI digest}
+  web:
+    image: ${NEXA_WEB_IMAGE:?Set signed approved WEB OCI digest}
