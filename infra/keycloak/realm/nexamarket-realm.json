@@ -1,0 +1,12 @@
+{
+ "realm": "nexamarket", "enabled": true, "displayName": "NexaMarket", "loginTheme": "nexamarket",
+ "registrationAllowed": true, "registrationEmailAsUsername": true, "loginWithEmailAllowed": true,
+ "resetPasswordAllowed": true, "rememberMe": true, "verifyEmail": true, "bruteForceProtected": true,
+ "failureFactor": 5, "waitIncrementSeconds": 60, "maxFailureWaitSeconds": 900,
+ "accessTokenLifespan": 300, "ssoSessionIdleTimeout": 1800, "ssoSessionMaxLifespan": 43200,
+ "requiredActions": [
+  {"alias":"VERIFY_EMAIL","name":"Verify Email","providerId":"VERIFY_EMAIL","enabled":true,"defaultAction":true},
+  {"alias":"UPDATE_PASSWORD","name":"Update Password","providerId":"UPDATE_PASSWORD","enabled":true,"defaultAction":false},
+  {"alias":"CONFIGURE_TOTP","name":"Configure OTP","providerId":"CONFIGURE_TOTP","enabled":true,"defaultAction":false}
+ ]
+}

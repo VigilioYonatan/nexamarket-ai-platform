@@ -1,0 +1,9 @@
+:root{--nexa-primary:#2563eb;--nexa-background:#f8fafc;--nexa-card:#fff;--nexa-text:#0f172a;--nexa-logo:url("/logo.svg");--nexa-font:system-ui}
+body,.login-pf-page{font-family:var(--nexa-font),-apple-system,sans-serif;background:linear-gradient(122deg,#0b1b39,#153366)!important;color:var(--nexa-text)}
+#kc-header,#kc-header-wrapper{color:#fff;font-size:1.7rem;font-weight:800}
+#kc-content,#kc-content-wrapper,.card-pf,.pf-v5-c-login__main{background:var(--nexa-card);border-radius:18px;box-shadow:0 18px 55px #06112b44;border:0}
+#kc-form-buttons input[type=submit],#kc-login,.pf-v5-c-button.pf-m-primary{background:var(--nexa-primary)!important;border-radius:10px;border-color:var(--nexa-primary)!important;font-weight:700}
+#kc-social-providers ul{display:grid;gap:8px}
+#kc-social-providers a{border:1px solid #dce5f2;border-radius:9px}
+
+#kc-header-wrapper::before{content:"";display:inline-block;width:36px;height:36px;vertical-align:middle;background-image:var(--nexa-logo);background-position:center;background-repeat:no-repeat;background-size:contain;margin-right:12px}
