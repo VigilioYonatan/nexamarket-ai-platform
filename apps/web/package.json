@@ -1,0 +1,26 @@
+{
+  "name": "@nexa/web",
+  "version": "0.1.0-beta",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@preact/signals": "2.3.2",
+    "preact": "10.27.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "2.10.2",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "22.19.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "5.9.3",
+    "vite": "7.1.12",
+    "vitest": "3.2.4"
+  }
+}
