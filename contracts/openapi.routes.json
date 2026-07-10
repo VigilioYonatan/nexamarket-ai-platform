@@ -1,0 +1,3273 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NexaMarket HTTP routes - server code index",
+    "version": "0.2.0",
+    "description": "Generated from NestJS route decorators. Request/response shapes are intentionally NOT claimed complete until Zod schemas are converted and a contract test checks them."
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/v1/admin/assets": {
+      "post": {
+        "tags": [
+          "AdminMedia"
+        ],
+        "operationId": "AdminMediaController.upload.api_v1_admin_assets",
+        "summary": "POST /api/v1/admin/assets",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/media.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/audit-events": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.audit",
+        "summary": "GET /api/v1/admin/audit-events",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/commissions": {
+      "get": {
+        "tags": [
+          "AdminCommercial"
+        ],
+        "operationId": "AdminCommercialController.get",
+        "summary": "GET /api/v1/admin/commissions",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/commercial.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "AdminCommercial"
+        ],
+        "operationId": "AdminCommercialController.publish",
+        "summary": "POST /api/v1/admin/commissions",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/commercial.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/commissions/history": {
+      "get": {
+        "tags": [
+          "AdminCommercial"
+        ],
+        "operationId": "AdminCommercialController.history",
+        "summary": "GET /api/v1/admin/commissions/history",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/commercial.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/features": {
+      "get": {
+        "tags": [
+          "AdminFlags"
+        ],
+        "operationId": "AdminFlagsController.list",
+        "summary": "GET /api/v1/admin/features",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/flags.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/features/{name}": {
+      "patch": {
+        "tags": [
+          "AdminFlags"
+        ],
+        "operationId": "AdminFlagsController.update",
+        "summary": "PATCH /api/v1/admin/features/{name}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/flags.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/media/brand": {
+      "post": {
+        "tags": [
+          "AdminMedia"
+        ],
+        "operationId": "AdminMediaController.upload.api_v1_admin_media_brand",
+        "summary": "POST /api/v1/admin/media/brand",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/media.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/orders": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.orders",
+        "summary": "GET /api/v1/admin/orders",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/payments/ledger-health": {
+      "get": {
+        "tags": [
+          "AdminPayment"
+        ],
+        "operationId": "AdminPaymentController.ledger",
+        "summary": "GET /api/v1/admin/payments/ledger-health",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/payments/payment-attempts/{id}/reconcile": {
+      "post": {
+        "tags": [
+          "AdminPayment"
+        ],
+        "operationId": "AdminPaymentController.reconcile",
+        "summary": "POST /api/v1/admin/payments/payment-attempts/{id}/reconcile",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/payments/reconciliation-queue": {
+      "get": {
+        "tags": [
+          "AdminPayment"
+        ],
+        "operationId": "AdminPaymentController.list",
+        "summary": "GET /api/v1/admin/payments/reconciliation-queue",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/returns": {
+      "get": {
+        "tags": [
+          "AdminReturns"
+        ],
+        "operationId": "AdminReturnsController.queue",
+        "summary": "GET /api/v1/admin/returns",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/returns.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/returns/{id}": {
+      "patch": {
+        "tags": [
+          "AdminReturns"
+        ],
+        "operationId": "AdminReturnsController.decide",
+        "summary": "PATCH /api/v1/admin/returns/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/returns.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sellers": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.sellers",
+        "summary": "GET /api/v1/admin/sellers",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/sellers/{id}/suspend": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.suspend",
+        "summary": "POST /api/v1/admin/sellers/{id}/suspend",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sellers/applications": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.applications",
+        "summary": "GET /api/v1/admin/sellers/applications",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/sellers/applications/{id}/approve": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.approve",
+        "summary": "POST /api/v1/admin/sellers/applications/{id}/approve",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/sellers/applications/{id}/reject": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.reject",
+        "summary": "POST /api/v1/admin/sellers/applications/{id}/reject",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/settings/{id}/publish": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.publish",
+        "summary": "POST /api/v1/admin/settings/{id}/publish",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/settings/{id}/rollback": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.rollback",
+        "summary": "POST /api/v1/admin/settings/{id}/rollback",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/settings/drafts": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.drafts",
+        "summary": "GET /api/v1/admin/settings/drafts",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "AdminController.create",
+        "summary": "POST /api/v1/admin/settings/drafts",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/support/tickets": {
+      "get": {
+        "tags": [
+          "AdminSupport"
+        ],
+        "operationId": "AdminSupportController.queue",
+        "summary": "GET /api/v1/admin/support/tickets",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/support/tickets/{id}": {
+      "get": {
+        "tags": [
+          "AdminSupport"
+        ],
+        "operationId": "AdminSupportController.detail",
+        "summary": "GET /api/v1/admin/support/tickets/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/support/tickets/{id}/messages": {
+      "post": {
+        "tags": [
+          "AdminSupport"
+        ],
+        "operationId": "AdminSupportController.reply",
+        "summary": "POST /api/v1/admin/support/tickets/{id}/messages",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/support/tickets/{id}/status": {
+      "patch": {
+        "tags": [
+          "AdminSupport"
+        ],
+        "operationId": "AdminSupportController.status",
+        "summary": "PATCH /api/v1/admin/support/tickets/{id}/status",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/trust/cases": {
+      "get": {
+        "tags": [
+          "AdminTrust"
+        ],
+        "operationId": "AdminTrustController.cases",
+        "summary": "GET /api/v1/admin/trust/cases",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "AdminTrust"
+        ],
+        "operationId": "AdminTrustController.open",
+        "summary": "POST /api/v1/admin/trust/cases",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/trust/cases/{id}": {
+      "patch": {
+        "tags": [
+          "AdminTrust"
+        ],
+        "operationId": "AdminTrustController.decide",
+        "summary": "PATCH /api/v1/admin/trust/cases/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/trust/reviews/{id}": {
+      "patch": {
+        "tags": [
+          "AdminTrust"
+        ],
+        "operationId": "AdminTrustController.moderate",
+        "summary": "PATCH /api/v1/admin/trust/reviews/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/trust/reviews/pending": {
+      "get": {
+        "tags": [
+          "AdminTrust"
+        ],
+        "operationId": "AdminTrustController.reviews",
+        "summary": "GET /api/v1/admin/trust/reviews/pending",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/ai/shopping/ask": {
+      "post": {
+        "tags": [
+          "Ai"
+        ],
+        "operationId": "AiController.ask",
+        "summary": "POST /api/v1/ai/shopping/ask",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/system.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cart": {
+      "get": {
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "CartController.get",
+        "summary": "GET /api/v1/cart",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/cart.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/cart/items": {
+      "post": {
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "CartController.add",
+        "summary": "POST /api/v1/cart/items",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/cart.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cart/items/{id}": {
+      "patch": {
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "CartController.change",
+        "summary": "PATCH /api/v1/cart/items/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/cart.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "CartController.remove",
+        "summary": "DELETE /api/v1/cart/items/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/cart.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/categories": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "operationId": "CatalogController.categories",
+        "summary": "GET /api/v1/categories",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/catalog.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/checkouts": {
+      "post": {
+        "tags": [
+          "Checkout"
+        ],
+        "operationId": "CheckoutController.create",
+        "summary": "POST /api/v1/checkouts",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/checkout.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/checkouts/{id}": {
+      "get": {
+        "tags": [
+          "Checkout"
+        ],
+        "operationId": "CheckoutController.get",
+        "summary": "GET /api/v1/checkouts/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/checkout.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/features": {
+      "get": {
+        "tags": [
+          "PublicFlags"
+        ],
+        "operationId": "PublicFlagsController.list",
+        "summary": "GET /api/v1/features",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/flags.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/me/addresses": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.addresses",
+        "summary": "GET /api/v1/me/addresses",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.addAddress",
+        "summary": "POST /api/v1/me/addresses",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/addresses/{id}": {
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.deleteAddress",
+        "summary": "DELETE /api/v1/me/addresses/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/favorites": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.favorites",
+        "summary": "GET /api/v1/me/favorites",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/favorites/{id}": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.addFavorite",
+        "summary": "POST /api/v1/me/favorites/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.deleteFavorite",
+        "summary": "DELETE /api/v1/me/favorites/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "operationId": "NotificationsController.list",
+        "summary": "GET /api/v1/me/notifications",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/notifications.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/notifications/{id}/read": {
+      "patch": {
+        "tags": [
+          "Notifications"
+        ],
+        "operationId": "NotificationsController.read",
+        "summary": "PATCH /api/v1/me/notifications/{id}/read",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/notifications.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/notifications/unread": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "operationId": "NotificationsController.unread",
+        "summary": "GET /api/v1/me/notifications/unread",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/notifications.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/orders": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "OrdersController.list",
+        "summary": "GET /api/v1/me/orders",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/orders.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/orders/{id}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "OrdersController.detail",
+        "summary": "GET /api/v1/me/orders/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/orders.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/orders/{id}/cancel": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "OrdersController.cancel",
+        "summary": "POST /api/v1/me/orders/{id}/cancel",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/orders.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/orders/{id}/return-requests": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.returnRequest",
+        "summary": "POST /api/v1/me/orders/{id}/return-requests",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/orders/{id}/seller-orders/{sellerOrderId}/confirm-delivery": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "OrdersController.confirmDelivery",
+        "summary": "POST /api/v1/me/orders/{id}/seller-orders/{sellerOrderId}/confirm-delivery",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/orders.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/return-requests": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "AccountController.returns",
+        "summary": "GET /api/v1/me/return-requests",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/account.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/support/tickets": {
+      "get": {
+        "tags": [
+          "MySupport"
+        ],
+        "operationId": "MySupportController.list",
+        "summary": "GET /api/v1/me/support/tickets",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "MySupport"
+        ],
+        "operationId": "MySupportController.create",
+        "summary": "POST /api/v1/me/support/tickets",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/support/tickets/{id}": {
+      "get": {
+        "tags": [
+          "MySupport"
+        ],
+        "operationId": "MySupportController.detail",
+        "summary": "GET /api/v1/me/support/tickets/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/me/support/tickets/{id}/messages": {
+      "post": {
+        "tags": [
+          "MySupport"
+        ],
+        "operationId": "MySupportController.reply",
+        "summary": "POST /api/v1/me/support/tickets/{id}/messages",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/support.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/payment-attempts": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "PaymentController.pay",
+        "summary": "POST /api/v1/payment-attempts",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/payment-attempts/{id}": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "PaymentController.get",
+        "summary": "GET /api/v1/payment-attempts/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/payments/public-config": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "operationId": "PaymentController.publicConfig",
+        "summary": "GET /api/v1/payments/public-config",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/products": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "operationId": "CatalogController.list",
+        "summary": "GET /api/v1/products",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/catalog.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/products/{id}": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "operationId": "CatalogController.detail",
+        "summary": "GET /api/v1/products/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/catalog.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/products/{listing_id}/reviews": {
+      "get": {
+        "tags": [
+          "PublicReviews"
+        ],
+        "operationId": "PublicReviewsController.list",
+        "summary": "GET /api/v1/products/{listing_id}/reviews",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      },
+      "post": {
+        "tags": [
+          "PublicReviews"
+        ],
+        "operationId": "PublicReviewsController.create",
+        "summary": "POST /api/v1/products/{listing_id}/reviews",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/trust.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recommendations/similar/{id}": {
+      "get": {
+        "tags": [
+          "Recommendations"
+        ],
+        "operationId": "RecommendationsController.similar",
+        "summary": "GET /api/v1/recommendations/similar/{id}",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/recommendations.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/recommendations/trending": {
+      "get": {
+        "tags": [
+          "Recommendations"
+        ],
+        "operationId": "RecommendationsController.trending",
+        "summary": "GET /api/v1/recommendations/trending",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/recommendations.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/search": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "operationId": "CatalogController.search",
+        "summary": "GET /api/v1/search",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/catalog.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/seller/analytics/summary": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.summary",
+        "summary": "GET /api/v1/seller/analytics/summary",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/application": {
+      "get": {
+        "tags": [
+          "SellerOnboarding"
+        ],
+        "operationId": "SellerOnboardingController.application",
+        "summary": "GET /api/v1/seller/application",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/applications": {
+      "post": {
+        "tags": [
+          "SellerOnboarding"
+        ],
+        "operationId": "SellerOnboardingController.apply",
+        "summary": "POST /api/v1/seller/applications",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/seller/commercial-policy": {
+      "get": {
+        "tags": [
+          "SellerCommercialPolicy"
+        ],
+        "operationId": "SellerCommercialPolicyController.get",
+        "summary": "GET /api/v1/seller/commercial-policy",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/commercial.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/inventory/{id}/adjustments": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.adjust",
+        "summary": "POST /api/v1/seller/inventory/{id}/adjustments",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/seller/listings": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.list",
+        "summary": "GET /api/v1/seller/listings",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.create",
+        "summary": "POST /api/v1/seller/listings",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/seller/listings/{id}/pause": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.pause",
+        "summary": "POST /api/v1/seller/listings/{id}/pause",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/listings/{id}/publish": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.publish",
+        "summary": "POST /api/v1/seller/listings/{id}/publish",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/media": {
+      "post": {
+        "tags": [
+          "SellerMedia"
+        ],
+        "operationId": "SellerMediaController.upload",
+        "summary": "POST /api/v1/seller/media",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/media.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/mercado-pago/authorize": {
+      "post": {
+        "tags": [
+          "SellerMercadoPago"
+        ],
+        "operationId": "SellerMercadoPagoController.url",
+        "summary": "POST /api/v1/seller/mercado-pago/authorize",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/mercado-pago/disconnect": {
+      "post": {
+        "tags": [
+          "SellerMercadoPago"
+        ],
+        "operationId": "SellerMercadoPagoController.disconnect",
+        "summary": "POST /api/v1/seller/mercado-pago/disconnect",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/orders": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.orders",
+        "summary": "GET /api/v1/seller/orders",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/orders/{id}/ship": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerController.ship",
+        "summary": "POST /api/v1/seller/orders/{id}/ship",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/seller.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "requestBody": {
+          "description": "Validated by controller-specific ZodPipe or route logic",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{id}/profile": {
+      "get": {
+        "tags": [
+          "Catalog"
+        ],
+        "operationId": "CatalogController.profile",
+        "summary": "GET /api/v1/sellers/{id}/profile",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/catalog.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/api/v1/settings/theme": {
+      "get": {
+        "tags": [
+          "PublicSettings"
+        ],
+        "operationId": "PublicSettingsController.get",
+        "summary": "GET /api/v1/settings/theme",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/admin.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/auth/callback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.callback",
+        "summary": "GET /auth/callback",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/auth/login": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.login",
+        "summary": "GET /auth/login",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.logout",
+        "summary": "POST /auth/logout",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.me",
+        "summary": "GET /auth/me",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission or CSRF denied"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline",
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/auth/register": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.register",
+        "summary": "GET /auth/register",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/auth/session": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "AuthController.session",
+        "summary": "GET /auth/session",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/auth.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/health/live": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "HealthController.live",
+        "summary": "GET /health/live",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/system.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "HealthController.ready",
+        "summary": "GET /health/ready",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/system.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/integrations/mercado-pago/oauth/callback": {
+      "get": {
+        "tags": [
+          "MercadoPagoCallback"
+        ],
+        "operationId": "MercadoPagoCallbackController.oauth",
+        "summary": "GET /integrations/mercado-pago/oauth/callback",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/integrations/mercado-pago/webhooks": {
+      "post": {
+        "tags": [
+          "MercadoPagoCallback"
+        ],
+        "operationId": "MercadoPagoCallbackController.webhook",
+        "summary": "POST /integrations/mercado-pago/webhooks",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/payments.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    },
+    "/internal/metrics": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "HealthController.metrics",
+        "summary": "GET /internal/metrics",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal failure"
+          }
+        },
+        "x-source": "apps/api/src/modules/system.ts",
+        "x-zod-request-schema": "Defined in apps/api/src/shared/dto.ts when @Body(new ZodPipe(...)) is used; no schema auto-generation in this baseline"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "nexa_session"
+      }
+    }
+  }
+}

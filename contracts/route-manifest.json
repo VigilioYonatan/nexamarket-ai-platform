@@ -1,0 +1,685 @@
+{
+  "generated_from": "NestJS controller decorators",
+  "total": 97,
+  "operations": [
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/assets",
+      "source": "media.ts",
+      "handler": "AdminMediaController.upload",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/audit-events",
+      "source": "admin.ts",
+      "handler": "AdminController.audit",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/commissions/history",
+      "source": "commercial.ts",
+      "handler": "AdminCommercialController.history",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/commissions",
+      "source": "commercial.ts",
+      "handler": "AdminCommercialController.get",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/commissions",
+      "source": "commercial.ts",
+      "handler": "AdminCommercialController.publish",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/admin/features/{name}",
+      "source": "flags.ts",
+      "handler": "AdminFlagsController.update",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/features",
+      "source": "flags.ts",
+      "handler": "AdminFlagsController.list",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/media/brand",
+      "source": "media.ts",
+      "handler": "AdminMediaController.upload",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/orders",
+      "source": "admin.ts",
+      "handler": "AdminController.orders",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/payments/ledger-health",
+      "source": "payments.ts",
+      "handler": "AdminPaymentController.ledger",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/payments/payment-attempts/{id}/reconcile",
+      "source": "payments.ts",
+      "handler": "AdminPaymentController.reconcile",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/payments/reconciliation-queue",
+      "source": "payments.ts",
+      "handler": "AdminPaymentController.list",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/admin/returns/{id}",
+      "source": "returns.ts",
+      "handler": "AdminReturnsController.decide",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/returns",
+      "source": "returns.ts",
+      "handler": "AdminReturnsController.queue",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/sellers/{id}/suspend",
+      "source": "admin.ts",
+      "handler": "AdminController.suspend",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/sellers/applications/{id}/approve",
+      "source": "admin.ts",
+      "handler": "AdminController.approve",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/sellers/applications/{id}/reject",
+      "source": "admin.ts",
+      "handler": "AdminController.reject",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/sellers/applications",
+      "source": "admin.ts",
+      "handler": "AdminController.applications",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/sellers",
+      "source": "admin.ts",
+      "handler": "AdminController.sellers",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/settings/{id}/publish",
+      "source": "admin.ts",
+      "handler": "AdminController.publish",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/settings/{id}/rollback",
+      "source": "admin.ts",
+      "handler": "AdminController.rollback",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/settings/drafts",
+      "source": "admin.ts",
+      "handler": "AdminController.drafts",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/settings/drafts",
+      "source": "admin.ts",
+      "handler": "AdminController.create",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/support/tickets/{id}/messages",
+      "source": "support.ts",
+      "handler": "AdminSupportController.reply",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/admin/support/tickets/{id}/status",
+      "source": "support.ts",
+      "handler": "AdminSupportController.status",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/support/tickets/{id}",
+      "source": "support.ts",
+      "handler": "AdminSupportController.detail",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/support/tickets",
+      "source": "support.ts",
+      "handler": "AdminSupportController.queue",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/admin/trust/cases/{id}",
+      "source": "trust.ts",
+      "handler": "AdminTrustController.decide",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/trust/cases",
+      "source": "trust.ts",
+      "handler": "AdminTrustController.cases",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/admin/trust/cases",
+      "source": "trust.ts",
+      "handler": "AdminTrustController.open",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/admin/trust/reviews/{id}",
+      "source": "trust.ts",
+      "handler": "AdminTrustController.moderate",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/admin/trust/reviews/pending",
+      "source": "trust.ts",
+      "handler": "AdminTrustController.reviews",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/ai/shopping/ask",
+      "source": "system.ts",
+      "handler": "AiController.ask",
+      "guarded": true
+    },
+    {
+      "method": "DELETE",
+      "route": "/api/v1/cart/items/{id}",
+      "source": "cart.ts",
+      "handler": "CartController.remove",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/cart/items/{id}",
+      "source": "cart.ts",
+      "handler": "CartController.change",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/cart/items",
+      "source": "cart.ts",
+      "handler": "CartController.add",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/cart",
+      "source": "cart.ts",
+      "handler": "CartController.get",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/categories",
+      "source": "catalog.ts",
+      "handler": "CatalogController.categories",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/checkouts/{id}",
+      "source": "checkout.ts",
+      "handler": "CheckoutController.get",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/checkouts",
+      "source": "checkout.ts",
+      "handler": "CheckoutController.create",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/features",
+      "source": "flags.ts",
+      "handler": "PublicFlagsController.list",
+      "guarded": false
+    },
+    {
+      "method": "DELETE",
+      "route": "/api/v1/me/addresses/{id}",
+      "source": "account.ts",
+      "handler": "AccountController.deleteAddress",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/addresses",
+      "source": "account.ts",
+      "handler": "AccountController.addresses",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/addresses",
+      "source": "account.ts",
+      "handler": "AccountController.addAddress",
+      "guarded": true
+    },
+    {
+      "method": "DELETE",
+      "route": "/api/v1/me/favorites/{id}",
+      "source": "account.ts",
+      "handler": "AccountController.deleteFavorite",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/favorites/{id}",
+      "source": "account.ts",
+      "handler": "AccountController.addFavorite",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/favorites",
+      "source": "account.ts",
+      "handler": "AccountController.favorites",
+      "guarded": true
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/v1/me/notifications/{id}/read",
+      "source": "notifications.ts",
+      "handler": "NotificationsController.read",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/notifications/unread",
+      "source": "notifications.ts",
+      "handler": "NotificationsController.unread",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/notifications",
+      "source": "notifications.ts",
+      "handler": "NotificationsController.list",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/orders/{id}/cancel",
+      "source": "orders.ts",
+      "handler": "OrdersController.cancel",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/orders/{id}/return-requests",
+      "source": "account.ts",
+      "handler": "AccountController.returnRequest",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/orders/{id}/seller-orders/{sellerOrderId}/confirm-delivery",
+      "source": "orders.ts",
+      "handler": "OrdersController.confirmDelivery",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/orders/{id}",
+      "source": "orders.ts",
+      "handler": "OrdersController.detail",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/orders",
+      "source": "orders.ts",
+      "handler": "OrdersController.list",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/return-requests",
+      "source": "account.ts",
+      "handler": "AccountController.returns",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/support/tickets/{id}/messages",
+      "source": "support.ts",
+      "handler": "MySupportController.reply",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/support/tickets/{id}",
+      "source": "support.ts",
+      "handler": "MySupportController.detail",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/me/support/tickets",
+      "source": "support.ts",
+      "handler": "MySupportController.list",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/me/support/tickets",
+      "source": "support.ts",
+      "handler": "MySupportController.create",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/payment-attempts/{id}",
+      "source": "payments.ts",
+      "handler": "PaymentController.get",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/payment-attempts",
+      "source": "payments.ts",
+      "handler": "PaymentController.pay",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/payments/public-config",
+      "source": "payments.ts",
+      "handler": "PaymentController.publicConfig",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/products/{id}",
+      "source": "catalog.ts",
+      "handler": "CatalogController.detail",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/products/{listing_id}/reviews",
+      "source": "trust.ts",
+      "handler": "PublicReviewsController.list",
+      "guarded": false
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/products/{listing_id}/reviews",
+      "source": "trust.ts",
+      "handler": "PublicReviewsController.create",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/products",
+      "source": "catalog.ts",
+      "handler": "CatalogController.list",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/recommendations/similar/{id}",
+      "source": "recommendations.ts",
+      "handler": "RecommendationsController.similar",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/recommendations/trending",
+      "source": "recommendations.ts",
+      "handler": "RecommendationsController.trending",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/search",
+      "source": "catalog.ts",
+      "handler": "CatalogController.search",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/seller/analytics/summary",
+      "source": "seller.ts",
+      "handler": "SellerController.summary",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/seller/application",
+      "source": "seller.ts",
+      "handler": "SellerOnboardingController.application",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/applications",
+      "source": "seller.ts",
+      "handler": "SellerOnboardingController.apply",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/seller/commercial-policy",
+      "source": "commercial.ts",
+      "handler": "SellerCommercialPolicyController.get",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/inventory/{id}/adjustments",
+      "source": "seller.ts",
+      "handler": "SellerController.adjust",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/listings/{id}/pause",
+      "source": "seller.ts",
+      "handler": "SellerController.pause",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/listings/{id}/publish",
+      "source": "seller.ts",
+      "handler": "SellerController.publish",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/seller/listings",
+      "source": "seller.ts",
+      "handler": "SellerController.list",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/listings",
+      "source": "seller.ts",
+      "handler": "SellerController.create",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/media",
+      "source": "media.ts",
+      "handler": "SellerMediaController.upload",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/mercado-pago/authorize",
+      "source": "payments.ts",
+      "handler": "SellerMercadoPagoController.url",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/mercado-pago/disconnect",
+      "source": "payments.ts",
+      "handler": "SellerMercadoPagoController.disconnect",
+      "guarded": true
+    },
+    {
+      "method": "POST",
+      "route": "/api/v1/seller/orders/{id}/ship",
+      "source": "seller.ts",
+      "handler": "SellerController.ship",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/seller/orders",
+      "source": "seller.ts",
+      "handler": "SellerController.orders",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/sellers/{id}/profile",
+      "source": "catalog.ts",
+      "handler": "CatalogController.profile",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/api/v1/settings/theme",
+      "source": "admin.ts",
+      "handler": "PublicSettingsController.get",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/auth/callback",
+      "source": "auth.ts",
+      "handler": "AuthController.callback",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/auth/login",
+      "source": "auth.ts",
+      "handler": "AuthController.login",
+      "guarded": false
+    },
+    {
+      "method": "POST",
+      "route": "/auth/logout",
+      "source": "auth.ts",
+      "handler": "AuthController.logout",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/auth/me",
+      "source": "auth.ts",
+      "handler": "AuthController.me",
+      "guarded": true
+    },
+    {
+      "method": "GET",
+      "route": "/auth/register",
+      "source": "auth.ts",
+      "handler": "AuthController.register",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/auth/session",
+      "source": "auth.ts",
+      "handler": "AuthController.session",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/health/live",
+      "source": "system.ts",
+      "handler": "HealthController.live",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/health/ready",
+      "source": "system.ts",
+      "handler": "HealthController.ready",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/integrations/mercado-pago/oauth/callback",
+      "source": "payments.ts",
+      "handler": "MercadoPagoCallbackController.oauth",
+      "guarded": false
+    },
+    {
+      "method": "POST",
+      "route": "/integrations/mercado-pago/webhooks",
+      "source": "payments.ts",
+      "handler": "MercadoPagoCallbackController.webhook",
+      "guarded": false
+    },
+    {
+      "method": "GET",
+      "route": "/internal/metrics",
+      "source": "system.ts",
+      "handler": "HealthController.metrics",
+      "guarded": false
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+name: NexaMarket - calidad, seguridad y pruebas
+permissions:
+  contents: read
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+jobs:
+  static:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Validar herramientas (runner aislado, imagen controlada)
+        run: |
+          set -eu
+          node --version; npm --version; python3 --version
+          test -s package-lock.json
+      - name: Resolver dependencias bloqueadas
+        run: npm ci --no-audit --no-fund
+      - name: Auditoría estática y fuentes
+        run: python3 scripts/audit_source.py
+      - name: Formato de contratos y compilación
+        run: npm run typecheck && npm run build
+      - name: Dominio + BDD
+        run: npm run test:domain && npm run test:bdd
+      - name: Pruebas unitarias
+        run: npm run test --workspace=@nexa/api && npm run test --workspace=@nexa/web
+      - name: Pruebas IA
+        run: |
+          python3 -m pip install -r apps/ai/requirements.txt -r apps/ai/requirements-dev.txt
+          (cd apps/ai && python3 -m pytest -q)
+  security:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Exigir herramientas de DevSecOps
+        run: |
+          set -eu
+          for cmd in gitleaks semgrep trivy syft; do command -v "$cmd"; done
+      - name: Secret scan
+        run: gitleaks detect --source . --redact --no-git --exit-code 1
+      - name: SAST
+        run: semgrep scan --config auto --error apps/api/src apps/web/src apps/ai/app
+      - name: Supply-chain / IaC
+        run: trivy fs --exit-code 1 --severity HIGH,CRITICAL --scanners vuln,misconfig,secret .
+      - name: SBOM local
+        run: syft dir:. -o cyclonedx-json=sbom.cdx.json
+  integration:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Ejecutar PostgreSQL de prueba aislado
+        run: |
+          set -eu
+          docker compose -f compose/compose.test.yaml up -d --wait
+          docker compose -f compose/compose.test.yaml ps
+      - name: Aplicar migraciones y pruebas reales
+        env:
+          NODE_ENV: test
+          TEST_DATABASE_URL: postgresql://test:test_pass_only_local@127.0.0.1:5445/nexamarket_test
+          DATABASE_URL: postgresql://test:test_pass_only_local@127.0.0.1:5445/nexamarket_test
+          PUBLIC_URL: http://localhost:5173
+          WEB_ORIGIN: http://localhost:5173
+          KEYCLOAK_ISSUER: http://localhost:8080/identity/realms/nexamarket
+          KEYCLOAK_CLIENT_ID: test
+          KEYCLOAK_CLIENT_SECRET: test
+          MP_CLIENT_ID: test
+          MP_CLIENT_SECRET: test
+          MP_REDIRECT_URI: http://localhost:5173/integrations/mercado-pago/oauth/callback
+          MP_PUBLIC_KEY: test
+          MP_WEBHOOK_SECRET: test
+          MP_TOKEN_ENCRYPTION_KEY: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          INTERNAL_METRICS_TOKEN: token-token-token-token
+        run: |
+          set -eu
+          npm ci --no-audit --no-fund
+          npm run build --workspace=@nexa/domain
+          npm run build --workspace=@nexa/api
+          (cd apps/api && node dist/scripts/migrate.js)
+          npm run test:integration
+      - name: Limpiar servicio y volumen de ensayo
+        if: always()
+        run: docker compose -f compose/compose.test.yaml down --volumes --remove-orphans

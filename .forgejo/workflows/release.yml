@@ -1,0 +1,58 @@
+name: NexaMarket - release OCI firma y promoción manual
+permissions:
+  contents: read
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Semver tag to release from reviewed protected branch'
+        required: true
+        type: string
+jobs:
+  release:
+    runs-on: self-hosted
+    environment: release-approved
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verificar dependencias, tests y evidencia local
+        run: |
+          set -eu
+          for tool in docker cosign syft trivy gitleaks; do command -v "$tool"; done
+          test -s package-lock.json
+          npm ci --no-audit --no-fund
+          npm run typecheck && npm run build && npm run test:domain && npm run test:bdd
+      - name: Construir imágenes y escanear antes de publicar
+        env:
+          NEXA_REGISTRY: ${{ secrets.SELF_HOSTED_OCI_REGISTRY }}
+        run: |
+          set -eu
+          test -n "$NEXA_REGISTRY"
+          docker build -f infra/docker/api.Dockerfile -t "$NEXA_REGISTRY/nexamarket-api:${{ inputs.tag }}" .
+          docker build -f infra/docker/web.Dockerfile -t "$NEXA_REGISTRY/nexamarket-web:${{ inputs.tag }}" .
+          trivy image --severity HIGH,CRITICAL --exit-code 1 "$NEXA_REGISTRY/nexamarket-api:${{ inputs.tag }}"
+          trivy image --severity HIGH,CRITICAL --exit-code 1 "$NEXA_REGISTRY/nexamarket-web:${{ inputs.tag }}"
+          syft "$NEXA_REGISTRY/nexamarket-api:${{ inputs.tag }}" -o cyclonedx-json=sbom-api.cdx.json
+          syft "$NEXA_REGISTRY/nexamarket-web:${{ inputs.tag }}" -o cyclonedx-json=sbom-web.cdx.json
+          docker push "$NEXA_REGISTRY/nexamarket-api:${{ inputs.tag }}"
+          docker push "$NEXA_REGISTRY/nexamarket-web:${{ inputs.tag }}"
+      - name: Sign digest-backed OCI images (on-prem registry)
+        env:
+          NEXA_REGISTRY: ${{ secrets.SELF_HOSTED_OCI_REGISTRY }}
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+          COSIGN_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+          COSIGN_PUBLIC_KEY: ${{ secrets.COSIGN_PUBLIC_KEY }}
+        run: |
+          set -eu
+          for app in api web; do
+            digest="$(docker buildx imagetools inspect "$NEXA_REGISTRY/nexamarket-$app:${{ inputs.tag }}" --format '{{.Manifest.Digest}}')"
+            test -n "$digest"
+            printf '%s\n' "$NEXA_REGISTRY/nexamarket-$app@$digest" >> release-digests.txt
+            cosign sign --yes --key env://COSIGN_KEY "$NEXA_REGISTRY/nexamarket-$app@$digest"
+            cosign verify --key env://COSIGN_PUBLIC_KEY "$NEXA_REGISTRY/nexamarket-$app@$digest"
+          done
+      - name: Registros de release
+        run: |
+          cat release-digests.txt
+          echo 'Deploy requires separate reviewed, protected production job with restore evidence.'
