@@ -1,0 +1,18 @@
+groups:
+  - name: nexamarket-commerce
+    rules:
+      - alert: HighHTTP5xx
+        expr: sum(rate(nexa_http_requests_total{status=~"5.."}[5m])) / clamp_min(sum(rate(nexa_http_requests_total[5m])), 0.001) > 0.03
+        for: 10m
+        labels: {severity: critical}
+        annotations: {summary: "NexaMarket HTTP 5xx ratio exceeded 3%"}
+      - alert: NoCommerceMetrics
+        expr: absent(up{job="nexamarket-api"}) or up{job="nexamarket-api"} == 0
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "NexaMarket metrics scrape unavailable"}
+      - alert: SlowHTTPP95
+        expr: histogram_quantile(0.95, sum by (le) (rate(nexa_http_request_seconds_bucket[5m]))) > 2
+        for: 10m
+        labels: {severity: warning}
+        annotations: {summary: "NexaMarket p95 latency over two seconds"}

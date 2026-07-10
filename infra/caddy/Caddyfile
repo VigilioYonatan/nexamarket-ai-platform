@@ -1,0 +1,44 @@
+{$APP_DOMAIN} {
+  encode zstd gzip
+
+  header {
+    X-Frame-Options "DENY"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    -Server
+  }
+
+  @appapi path /api/* /auth/* /integrations/* /health/* /reference* /openapi.json
+  handle @appapi {
+    reverse_proxy api:4000
+  }
+
+  handle /identity/* {
+    reverse_proxy keycloak:8080
+  }
+
+  @getmedia {
+    path /media/*
+    method GET HEAD
+  }
+  handle @getmedia {
+    uri strip_prefix /media
+    header Content-Security-Policy "default-src 'none'; sandbox"
+    reverse_proxy seaweedfs:8888
+  }
+
+  handle /media/* {
+    respond "Method not allowed" 405
+  }
+
+  handle {
+    header Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://*.mercadopago.com; frame-ancestors 'none'; script-src 'self' https://sdk.mercadopago.com https://*.mercadopago.com; style-src 'self' 'unsafe-inline' https://*.mercadopago.com; img-src 'self' data: https://*.mercadopago.com; font-src 'self' data:; connect-src 'self' https://*.mercadopago.com; frame-src https://*.mercadopago.com https://*.mercadopago.com.pe; upgrade-insecure-requests"
+    reverse_proxy web:8080
+  }
+
+  log {
+    output stdout
+    format json
+  }
+}
